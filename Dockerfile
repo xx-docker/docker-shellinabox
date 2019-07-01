@@ -1,7 +1,7 @@
 FROM centos:7
 WORKDIR /opt/
 USER root
-RUN yum install epel-release -y
+#RUN yum install epel-release -y
 #RUN apt-get -y install gcc gcc-c++
 RUN yum install git openssl-devel pam-devel zlib-devel autoconf automake libtool -y
 RUN  git clone https://github.com/shellinabox/shellinabox.git && cd shellinabox
