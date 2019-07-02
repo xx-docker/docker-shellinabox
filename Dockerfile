@@ -3,10 +3,11 @@ WORKDIR /opt/
 USER root
 RUN yum install epel-release -y
 #RUN apt-get -y install gcc gcc-c++
-RUN yum install git openssl-devel pam-devel zlib-devel autoconf automake libtool -y
-RUN  git clone https://github.com/shellinabox/shellinabox.git && cd shellinabox
+RUN yum install git openssl-devel pam-devel zlib-devel autoconf automake libtool make -y
+RUN  git clone https://github.com/shellinabox/shellinabox.git 
+WORKDIR /opt/shellinabox
 RUN  autoreconf -i
-RUN  ./configure && make
+RUN ./configure && make
 RUN ln -sn /opt/shellinabox/shellinaboxd /usr/bin/shellinaboxd
 ENV HOST localhost
 COPY docker-entrypoint.sh /usr/local/bin/
