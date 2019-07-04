@@ -7,3 +7,9 @@
 ## 创建docker并且使用
 - 常用命令
 - `shellinaboxd --user-css Normal:+white-on-black.css -t -s /:SSH:192.168.2.111`
+
+# 使用教程
+- 修改对应的HOST为你需要连接的IP即可。
+```
+docker run -itd --name=test -e HOST=192.168.2.99 -P registry.cn-hangzhou.aliyuncs.com/xx-zhang/docker-shellinabox:v1 entrypoint.sh
+```
